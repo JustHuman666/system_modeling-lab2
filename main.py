@@ -44,7 +44,8 @@ def imit_table_model(max_queue_p1_list: list,
                                             delay_p1_list[index],
                                             delay_p2_list[index],
                                             delay_p3_list[index],
-                                            time)
+                                            time,
+                                            channels=channels)
         records.append({**model_info, **result})
     dataframe_info = dataframe_info.append(records)
     dataframe_info.to_excel(f"results_{channels}_channels.xlsx")
@@ -133,5 +134,5 @@ if __name__ == "__main__":
                      delay_p2_list,
                      delay_p3_list,
                      1000.0,
-                     channels=9)
+                     channels=4)
 
